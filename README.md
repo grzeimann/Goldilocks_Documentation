@@ -1,7 +1,7 @@
 # Goldilocks_Documenation
 **Habitable Planet Finder (HPF) Automatic Reduction Software**
 
-*GoldiLocks* is a an automatic pipeline for the HPF instrument at the Hobby Eberly Telescope (HET).  The pipeline reduces the previous night's data the following morning and provides users with reduced spectra to either adjust their program/targets or quickly turn observations into a scientific publication.  Although the primary goal of the software is to quickly reduce the HPF data products, we still aim to provide the highest quality reductions possible for both spectral and radial velocity analysis.  To that aim, please do not hesitate to contact the author below and provide feedback or make requests.
+*Goldilocks* is a an automatic pipeline for the HPF instrument at the Hobby Eberly Telescope (HET).  The pipeline reduces the previous night's data the following morning and provides users with reduced spectra to either adjust their program/targets or quickly turn observations into a scientific publication.  Although the primary goal of the software is to quickly reduce the HPF data products, we still aim to provide the highest quality reductions possible for both spectral and radial velocity analysis.  To that aim, please do not hesitate to contact the author below and provide feedback or make requests.
 
 ## Table of Contents
 

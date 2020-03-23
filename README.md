@@ -163,7 +163,7 @@ The typical correction ranges from -10 to 10 m/s.  The inferred correction is st
   <img src="images/rv_example.png" width="850"/>
 </p>
 
-Longer trends in the instrumental drift can be seen as well.  Here we show an analysis of the RV shift from late September 2019 to March 2020.  Missing dates either had a failed analysis or were insufficiently covered by laser frequency comb (LFC) exposures.  There is a toothsaw shape to each day that can be seen on the zoom in.  The origin is discussed extensively in Metcalf et al. (2019), and it is related to the weight of the liquid nitrogen tank between re-fills.  Over a period of weeks you can see drifts in the instrumental RV and a strong correlation between the intercept of given night and its neighbors.  This allows us to model nights with missing LFC data.  In this plot we simply using a smoothing spline to capture the drift over these 6 months.
+Longer trends in the instrumental drift can be seen as well.  Here we show an analysis of the RV shift from late September 2019 to March 2020.  Missing dates either had a failed analysis or were insufficiently covered by laser frequency comb (LFC) exposures.  There is a sawtooth shape to each day that can be seen on the zoom in.  The origin is discussed extensively in Metcalf et al. (2019), and it is related to the weight of the liquid nitrogen tank between re-fills.  Over a period of weeks you can see drifts in the instrumental RV and a strong correlation between the intercept of a given night and its neighbors.  This allows us to model nights with missing LFC data.  In this plot we simply use a smoothing spline to capture the drift over these 6 months.
 
 <p align="center">
   <img src="images/RV_Goldilocks_Analysis.png" width="850"/>

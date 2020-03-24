@@ -28,7 +28,7 @@
 >[Author](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Author)
 
 ## Working on TACC 
-The reductions are designed to be run on TACC where a copy of the raw data lives.  We will describe how to get started on TACC, where the automatic reduction products live, and the products that are produced.
+The reductions are designed to be run on TACC where a copy of the raw data lives.  We will describe how to get started on TACC, where the automatic reduction products reside.
 
 ### Signing up for an account
 https://portal.tacc.utexas.edu/
@@ -42,7 +42,7 @@ ssh -Y USERNAME@wrangler.tacc.utexas.edu
 ```
 
 ## Data Products
-*Goldilocks* is run each morning 11:00am.  An accompanying email from the HET astronomer will alert the user that target(s) were observed the previous night and data reductions are available.  Your data products in the following path:
+*Goldilocks* is run each morning 11:00am.  The run time varies on cpu availability and the amount of data, but the reductions should finish by 1pm or so.  An accompanying email from the HET astronomer will alert the user that target(s) were observed the previous night and data reductions are (or will be soon) available.  The data products are in the following path:
 ```
 /work/03946/hetdex/maverick/HPF/PROGRAM-ID
 ```
@@ -94,7 +94,7 @@ A png output is also included:
 ```
 Goldilocks-DATETIME_v01_OBSID.spectra.png
 ```
-Which plots the sci, sky, and cal fibers in blue, orange, and green respectively.  The plots also include the median S/N for each order.  The png file is quite large to allow for sufficient zoom to peak up on a given feature.
+which plots the sci, sky, and cal fibers in blue, orange, and green respectively.  The plots also include the median S/N for each order.  The png file is quite large to allow for sufficient zoom to peak up on any given feature.
 
 ## Documentation
 
@@ -118,7 +118,7 @@ Slope and Error Image Generation:
 11. Divide slope and error image by flat field; this results in zeros outside of the fiber model region (+/-7 pixels) for each order (zero values are masked pixels)
 ```
 
-We combine Alpha Bright exposures over many nights to make a single master frame for all three fibers.  This master frame is used to model the trace of the fibers, the fiber profile for each fiber and order as a function of column, and to remove flat fielding features.  Below is a zoom-in of the hpf_trace_image.fits frame in the calibrations folder.  The three fibers (sky, sci, and cal) are marked as well as flat-fielding features which are removed for science frames.
+We combine Alpha Bright exposures over many nights to make a single master frame for all three fibers.  This master frame is used to model the trace of the fibers, the fiber profile for each fiber and order as a function of column, and to remove flat fielding features.  Below is a zoom-in of the hpf_trace_image.fits frame in the calibrations folder.  The three fibers (sky, sci, and cal) are marked, as well as flat-fielding features which are removed for science frames.
 
 <p align="center">
   <img src="images/master_alpha_bright.png" width="650"/>
@@ -152,7 +152,7 @@ We compare our extractions to those of the HPF team and find quite good agreemen
 #### Radial Velocity Corrections
 **Note: all observations have the same wavelength solution while instrumental drifts and barycentric corrections are modeled, put in the header, and left to the users to correct the wavelength solutions.**
 
-We model the Laser Frequency Comb (LFC) for the calibration fiber throughout the night to infer the instrumental radial velocity correction needed for a given scientific observation.  The radial velocity change through the night is sufficiently modeled with a linear regression and the results of which are shown in:
+We model the Laser Frequency Comb (LFC) for the calibration fiber throughout the night to infer the instrumental radial velocity correction needed for a given scientific observation.  The radial velocity change throughout the night is sufficiently modeled with a linear regression and the results of which are shown in:
 ```
 /work/03946/hetdex/maverick/HPF/CALS/{DATE}_rv.png
 ```
@@ -163,7 +163,7 @@ The typical correction ranges from -10 to 10 m/s.  The inferred correction is st
   <img src="images/rv_example.png" width="850"/>
 </p>
 
-Longer trends in the instrumental drift can be seen as well.  Here we show an analysis of the RV shift from late September 2019 to March 2020.  Missing dates either had a failed analysis or were insufficiently covered by laser frequency comb (LFC) exposures.  There is a sawtooth shape to each day that can be seen on the zoom in.  The origin is discussed extensively in Metcalf et al. (2019), and it is related to the weight of the liquid nitrogen tank between re-fills.  Over a period of weeks you can see drifts in the instrumental RV and a strong correlation between the intercept of a given night and its neighbors.  This allows us to model nights with missing LFC data.  In this plot we simply use a smoothing spline to capture the drift over these 6 months.
+Longer trends in the instrumental drift can be seen as well.  Here we show an analysis of the RV shift from late September 2019 to March 2020.  Missing dates either had a failed analysis or were insufficiently covered by laser frequency comb (LFC) exposures.  There is a sawtooth shape to each day that can be seen on the zoom in.  The origin is discussed extensively in Metcalf et al. (2019), and it is related to the weight of the liquid nitrogen tank between re-fills.  Over a period of weeks you can see drifts in the instrumental RV and a strong correlation between the intercept of a given night and its neighbors.  This allows us to model nights with missing LFC data.  In this plot we simply use a smoothing spline to capture the drift over these 6 months.  *Since Goldilocks is run each morning, this long term analysis is not applied to the reductions but could be provided if requested.*
 
 <p align="center">
   <img src="images/RV_Goldilocks_Analysis.png" width="850"/>
@@ -176,7 +176,7 @@ sc = SkyCoord(RA, Dec)
 t = Time(begin+length/2.)
 vcorr = sc.radial_velocity_correction(kind='barycentric', obstime=t, location=loc)
 ```
-The barycentric radial velocity correction is stored in the header as **BRVCORR**.
+The barycentric radial velocity correction is stored in the header as **BRVCORR**.  We expect this correction to have some error as we don't use the exact geographical location of the HET and rather use the McDonald Observatory.  We also don't calculate the flux-weighted average time for each order but instead just use the time at the middle of the exposure.
 
 #### Examples
 Here we are showing a twilight spectrum for each of the 28 orders.  The three colors: blue, orange, and green, correspond to the three fibers: sci, sky, and cal.  This ".png" is available for each reduced source.

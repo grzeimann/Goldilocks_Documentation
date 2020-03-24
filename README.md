@@ -50,11 +50,7 @@ where PROGRAM-ID, is your program number, for example HET20-3-999.  To get all o
 ```
 scp -r username@wrangler.tacc.utexas.edu:/work/03946/hetdex/maverick/HPF/PROGRAM-ID .
 
-OR
-
-on the destination machine:
-mkdir PROGRAM-ID
-or if the folder already exists,
+OR on the destination machine:
 
 cd PROGRAM-ID
 rsync -avz username@wrangler.tacc.utexas.edu:/work/03946/hetdex/maverick/HPF/PROGRAM-ID/ .

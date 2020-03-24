@@ -49,6 +49,15 @@ ssh -Y USERNAME@wrangler.tacc.utexas.edu
 where PROGRAM-ID, is your program number, for example HET20-3-999.  To get all of the current reductions for your program, simply:
 ```
 scp -r username@wrangler.tacc.utexas.edu:/work/03946/hetdex/maverick/HPF/PROGRAM-ID .
+
+OR
+
+on the destination machine:
+mkdir PROGRAM-ID
+or if the folder already exists,
+
+cd PROGRAM-ID
+rsync -avz username@wrangler.tacc.utexas.edu:/work/03946/hetdex/maverick/HPF/PROGRAM-ID/ .
 ```
 You merely have to use your "username" and your "PROGRAM-ID" and you can copy over your products.  There is a small complication.  The data products in your "PROGRAM-ID" folder include the products of the HPF team as well as the new automatic pipeline.  Products released from the HPF team occur on a quarterly basis (every three months or so) and include the naming scheme:
 ```

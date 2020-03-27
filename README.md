@@ -42,7 +42,7 @@ ssh -Y USERNAME@wrangler.tacc.utexas.edu
 ```
 
 ## Data Products
-*Goldilocks* is run each morning 11:00am.  The run time varies on cpu availability and the amount of data, but the reductions should finish by 1pm or so.  An accompanying email from the HET astronomer will alert the user that target(s) were observed the previous night and data reductions are (or will be soon) available.  The data products are in the following path:
+*Goldilocks* is run each morning 11:30am.  The run time varies on cpu availability and the amount of data, but the reductions should finish by 1pm or so.  An accompanying email from the HET astronomer will alert the user that target(s) were observed the previous night and data reductions are (or will be soon) available.  The data products are in the following path:
 ```
 /work/03946/hetdex/maverick/HPF/PROGRAM-ID
 ```

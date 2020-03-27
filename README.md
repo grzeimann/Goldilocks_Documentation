@@ -162,7 +162,7 @@ We model the Laser Frequency Comb (LFC) for the calibration fiber throughout the
 /work/03946/hetdex/maverick/HPF/CALS/{DATE}_rv.png
 ```
 
-The typical correction ranges from -10 to 10 m/s.  The inferred correction is stored in the header as **LRVCORR**.  We show the instrument RV modeling for 01/07/2020 below.  Note that the ticks for the date-time line up with the ticks for the modified julian date and occur on the hour.
+The typical correction ranges from -10 to 10 m/s.  The inferred correction is stored in the header as **LRVCORR**.  **A value of 0.0 exactly indicates a failure in the instrumental rv correction.  These will be addressed using a longer period model as discussed below to aid on failed nights** We show the instrument RV modeling for 01/07/2020 below.  Note that the ticks for the date-time line up with the ticks for the modified julian date and occur on the hour.
 
 <p align="center">
   <img src="images/rv_example.png" width="850"/>

@@ -194,7 +194,7 @@ Here we are showing a twilight spectrum for each of the 28 orders.  The three co
 
 ## Telluric Correction
 
-We take a non-parametric approach to telluric corrections by contructing a principal component basis for physically motivated models from TelFit (Gullikson et al. 2014).  To inform our PCA construction, we collected all telluric standard star (A0V) observations from Jan-2021 through Sep-2021, totalling 126 observations.  We   
+We take a non-parametric approach to telluric corrections by contructing a principal component basis for physically motivated models from TelFit (Gullikson et al. 2014).  To inform our PCA construction, we collected all telluric standard star (A0V) observations from Jan-2021 through Sep-2021, totalling 126 observations.  All of our analysis begins with continuum normalization.  We explain our steps to estimate the continuum below show an example in the following figure.
 
 ```
 Continuum estimation:

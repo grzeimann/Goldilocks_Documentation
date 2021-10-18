@@ -25,6 +25,8 @@
 
 >>>[Examples](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Examples)
 
+>[Telluric Correction](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Telluric-Correction)
+
 >[Author](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Author)
 
 ## Working on TACC 
@@ -189,6 +191,10 @@ Here we are showing a twilight spectrum for each of the 28 orders.  The three co
 <p align="center">
   <img src="images/example_twi.png" width="850"/>
 </p>
+
+## Telluric Correction
+
+We take a non-parametric modeling approach to telluric corrections by contructing principal component bases for physically motivated models from TelFit (Gullikson et al. 2014).
 
 ## Author
 Greg Zeimann

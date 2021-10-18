@@ -194,7 +194,19 @@ Here we are showing a twilight spectrum for each of the 28 orders.  The three co
 
 ## Telluric Correction
 
-We take a non-parametric modeling approach to telluric corrections by contructing principal component bases for physically motivated models from TelFit (Gullikson et al. 2014).
+We take a non-parametric modeling approach to telluric corrections by contructing a principal component basis for physically motivated models from TelFit (Gullikson et al. 2014).
+
+```
+Continuum estimation:
+
+1. Using a default telluric model, identify and mask wavelengths with tranmission <98.5% (where 100% is zero absorption).
+2. For each order, using 100 bins for the 2040 data points, calculate the 50th-% for the given bin ignoring masked values.  If all data points in a bin are masked, the bin is ignored in the next process.
+3. Linearly interpolate between each bin (including extrapolation for the end points) to construct our continuum model.  
+```
+
+We accomplished this approach in two steps.  First we constructed a coarse grid of TelFit models, fit a PCA basis to the grid, fit our telluric standard star observations, determined the average telluric absorption, fit a PCA basis to the residuals of that model, then refit our standard stars.  
+
+First we collected all telluric star observations from Jan-2021 through Sep-2021, totalling 126 observations.  We constructed a grid of TelFit models for three parameters: airmass, O2, and H2O.  This grid is rather coarse with only three points for airmass (min, median, and maximum airmass for the HET), three points for O2 (0.5e5, 2e5, and 3.5e5), and finally 8 points for H20 (ranging from 0-100% humidity).  This 72 point grid covers the phase space of expected telluric absorption at the HET.  It is far too coarse for individual modeling purposes, but more than sufficient to construct our inital PCA basis. We built a PCA model with 15 components from our 72 point grid to fit each of our 126 stars.  
 
 
 ## Author

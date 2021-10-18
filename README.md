@@ -200,7 +200,8 @@ We take a non-parametric modeling approach to telluric corrections by contructin
 Continuum estimation:
 
 1. Using a default telluric model, identify and mask wavelengths with tranmission <98.5% (where 100% is zero absorption).
-2. For each order, using 100 bins for the 2040 data points, calculate the 50th-% for the given bin ignoring masked values.  If all data points in a bin are masked, the bin is ignored in the next process.
+2. For each order, using 100 bins for the 2040 data points, calculate the 50th-% for the given bin ignoring masked values.  
+   If all data points in a bin are masked, the bin is ignored in the next process.
 3. Linearly interpolate between each bin (including extrapolation for the end points) to construct our continuum model.  
 ```
 

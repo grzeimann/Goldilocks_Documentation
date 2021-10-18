@@ -5,29 +5,29 @@
 
 ## Table of Contents
 
->[Working on TACC](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Working-on-TACC)
+>[Working on TACC](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#Working-on-TACC)
 
->>[Signing up for an account](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Signing-up-for-an-account)
+>>[Signing up for an account](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#Signing-up-for-an-account)
 
->[Data Products](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Data-Products)
+>[Data Products](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#Data-Products)
 
->[Documentation](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Documentation)
+>[Documentation](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#Documentation)
 
->>[Reduction Steps](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Reduction-Steps)
+>>[Reduction Steps](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#Reduction-Steps)
 
->>>[Slope Image](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Slope-Image)
+>>>[Slope Image](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#Slope-Image)
 
->>>[Spectral Extraction](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Spectral-Extraction)
+>>>[Spectral Extraction](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#Spectral-Extraction)
 
->>>[Goldilocks vs HPF Team Reduction](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Goldilocks-vs-HPF-Team-Reduction)
+>>>[Goldilocks vs HPF Team Reduction](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#Goldilocks-vs-HPF-Team-Reduction)
 
->>>[Radial Velocity Corrections](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Radial-Velocity-Corrections)
+>>>[Radial Velocity Corrections](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#Radial-Velocity-Corrections)
 
->>>[Examples](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Examples)
+>>>[Examples](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#Examples)
 
->[Telluric Correction](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Telluric-Correction)
+>[Telluric Correction](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#Telluric-Correction)
 
->[Author](https://github.com/grzeimann/Goldilocks/blob/master/README.md#Author)
+>[Author](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#Author)
 
 ## Working on TACC 
 The reductions are designed to be run on TACC where a copy of the raw data lives.  We will describe how to get started on TACC, where the automatic reduction products reside.

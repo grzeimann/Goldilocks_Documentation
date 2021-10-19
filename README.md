@@ -27,6 +27,12 @@
 
 >[Telluric Correction](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#Telluric-Correction)
 
+>>[Methodology](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#methodology)
+
+>>[Sky Subtraction And Deblazing](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#sky-subtraction-and-deblazing)
+
+>>[Continuum Normalization](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#continuum-normalization)
+
 >[Author](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#Author)
 
 ## Working on TACC 

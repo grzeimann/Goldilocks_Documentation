@@ -198,20 +198,20 @@ All HPF spectra suffer from attenuation in the Earth's atmosphere producing tell
 
 We instead take a non-parametric approach in Goldilocks and construct a principal component basis for the theoretical models of TelFit (Gullikson et al. 2014), iteratively informing the basis using telluric standard star observations.  This can be viewed as a hybrid approach between the empirical efforts and theoritical codes.  We collected all telluric standard star (HRXXXX) observations from Jan-2021 through Sep-2021, totalling 126 observations.  We ran each star through the same processing steps described below. 
 
-We begin our analysis with the initial products of Goldilocks which include science, sky, and calibration fiber spectra in e-/s.  The science fiber still includes night sky emission and requires deblazing.  We use the LDLS master frame in the Goldilocks calibration folder to produce an array normalization for the sky fiber to the science fiber (the sky fiber is typically 94% of the throughput of the science fiber).  After normalization, we subtract the sky fiber and  use the same LDLS master frame to deblaze the science spectra.  The deblazing function is just a smooth continuum of the science fiber LDLS spectrum normalized by the median value and the science observation is divided by the deblazing function.  We show an example of the sky subtraction and deblazing effort below.  
+We begin our analysis with the initial products of Goldilocks which include science, sky, and calibration fiber spectra in e-/s.  The science fiber still includes night sky emission and requires deblazing.  We use the LDLS master frame in the Goldilocks calibration folder to produce a vector normalization for the sky fiber to the science fiber (the sky fiber is typically 93-97% of the throughput of the science fiber).  After normalization, we subtract the sky fiber and  use the same LDLS master frame to deblaze the science spectra.  The deblazing function is just a smooth continuum of the science fiber LDLS spectrum normalized by the median value and the science observation is divided by the deblazing function.  We show an example of the sky subtraction and deblazing steps below.  
 
 <p align="center">
   <img src="images/skysub_deblaze_v02.png" width="850"/>
 </p>
 
- 
-To inform our PCA construction,.  All of our analysis begins with deblazing our spectra.  We use an LDLS master frame in the Goldilocks calibration folder to deblaze the science fiber and the sky fiber.  We then subtract the sky fiber from the science fiber (note the normalization correction between the science and sky fiber is accounted for in the deblazing step).  The nest step is continuum normalization.  We explain the process to estimate the continuum below and show an example in the following figure.
+Although our spectra are deblazed, they are not continuum normalized.  Rather than fitting stellar templates to normalize our spectra, we choose a flexible, more localised continuum fitting effort that can ignore telluric absorption lines but also fit broad stellar features in the hot telluric standards.  We explain the process to estimate the continuum below and show an example in the following figure.
 
 ```
 Continuum estimation:
 
-1. Using a default telluric model, identify and mask wavelengths with tranmission <98.5% (where 100% is zero absorption).
-2. For each order, using 100 bins for the 2040 data points, calculate the 50th-% for the given bin ignoring masked values.  
+1. Using a default telluric model from TelFit (50% humidity, 2.0e5 O2, and the median airmass of the HET), 
+   we identify and mask wavelengths with tranmission <98.5% (where 100% is zero absorption).
+2. For each order, using 100 bins for the 2040 data points, we calculate the 50th-% for the given bin ignoring masked values.  
    If all data points in a bin are masked, the bin is ignored in the next process.
 3. Linearly interpolate between each bin (including extrapolation for the end points) to construct our continuum model.  
 ```

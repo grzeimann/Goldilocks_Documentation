@@ -239,6 +239,9 @@ After continuum normalization, we can begin fitting telluric absorption line mod
 
 We could use the empirical method to create our average telluric model and residual PCA basis, but we don't want to have features in the principal components that might be related to poor continuum normalization of real stellar features.  Instead we want to create our average/residual models from theoritical telluric spectra to avoid overfitting.  So, we construct a grid of TelFit models at the HPF resolution for three parameters: airmass, O2, and H2O.  This grid is rather coarse with only three points for airmass (min, median, and maximum airmass for the HET), three points for O2 (0.5e5, 2e5, and 3.5e5), and finally 8 points for H20 (ranging from 0-100% humidity).  We don't use the grid itself for fitting, but instead we build a PCA model with 15 components from our 72 grid spectra to find the initial best fit telluric model for each of our 126 stars.  We fit order by order for this stage to construct the best initial models that we can.  After fitting each order for each star, we tabulate all of the fits and determine the average telluric absorption for all channels.  Our average is a summation of the biweight average model fits and the biweight average offset of the models from the data.  This lowers the systematics between the HPF spectra and the TelFit models.  We then construct a PCA basis from the residuals of the biweight average model and the individual model fits.  The figure below shows a small wavelength range of the average telluric model and the first 5 components of the 15 component basis.
 
+<p align="center">
+  <img src="images/telluric_pca.png" width="850"/>
+</p>
 
 ## Author
 Greg Zeimann

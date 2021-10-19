@@ -216,7 +216,7 @@ Continuum estimation:
 3. Linearly interpolate between each bin (including extrapolation for the end points) to construct our continuum model.  
 ```
 <p align="center">
-  <img src="images/telluric_continuum.png" width="850"/>
+  <img src="images/telluric_continuum_v02.png" width="850"/>
 </p>
 
 We accomplished this approach in two steps.  First we constructed a coarse grid of TelFit models, fit a PCA basis to the grid, fit our telluric standard star observations, determined the average telluric absorption, fit a PCA basis to the residuals of that model, then refit our standard stars.  

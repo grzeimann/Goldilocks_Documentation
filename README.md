@@ -194,15 +194,21 @@ Here we are showing a twilight spectrum for each of the 28 orders.  The three co
 
 ## Telluric Correction
 
+### Methodology
+
 All HPF spectra suffer from attenuation in the Earth's atmosphere producing telluric lines in the spectrum.  Often, telluric lines are corrected using a hot star observed on the same night normalized by a template A/B stellar spectrum, denoted as the empirical method.  Alternatively, radiative transfer codes can produce telluric absorption spectra for a range of input to fit a given observation, denoted as the theoretical method.  Both methods are successful to a degree, but each can have their drawbacks.  The empirical method is quick and includes the nuiances of the site location / instrument, but requires an extrapolation step that can be quite uncertain.  The theoritical method is flexible and physically motivated, but it can be slow and requires significant effort to map successfully to the instrumental setup and atmospheric conditions.  
 
 We instead take a non-parametric approach in Goldilocks and construct a principal component basis for the theoretical models of TelFit (Gullikson et al. 2014), iteratively informing the basis using telluric standard star observations.  This can be viewed as a hybrid approach between the empirical efforts and theoritical codes.  We collected all telluric standard star (HRXXXX) observations from Jan-2021 through Sep-2021, totalling 126 observations.  We ran each star through the same processing steps described below. 
+
+### Sky Subtraction And Deblazing
 
 We begin our analysis with the initial products of Goldilocks which include science, sky, and calibration fiber spectra in e-/s.  The science fiber still includes night sky emission and requires deblazing.  We use the LDLS master frame in the Goldilocks calibration folder to produce a vector normalization for the sky fiber to the science fiber (the sky fiber is typically 93-97% of the throughput of the science fiber).  After normalization, we subtract the sky fiber and  use the same LDLS master frame to deblaze the science spectra.  The deblazing function is just a smooth continuum of the science fiber LDLS spectrum normalized by the median value and the science observation is divided by the deblazing function.  We show an example of the sky subtraction and deblazing steps below.  
 
 <p align="center">
   <img src="images/skysub_deblaze_v02.png" width="850"/>
 </p>
+
+### Continuum Normalization
 
 Although our spectra are deblazed, they are not continuum normalized.  Rather than fitting stellar templates to normalize our spectra, we choose a flexible, more localised continuum fitting effort that can ignore telluric absorption lines but also fit broad stellar features in the hot telluric standards.  We explain the process to estimate the continuum below and show an example in the following figure.
 

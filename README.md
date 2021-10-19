@@ -249,7 +249,7 @@ Now that we have constructed our average telluric spectrum and our residual PCA 
   <img src="images/telluric_model_v02.png" width="850"/>
 </p>
 
-Theoritical telluric fits tend to struggle with O2 bands.  Here we show the 28th order for HR4829 (same star as above), which has a significant O2 band int the wavelength region.  The fit looks very accurate compared to other previous efforts (e.g., Gullikson et al. 2014, Ulmer-Moll et al. 2019).
+Theoritical telluric fits tend to struggle with O2 bands.  Here we show the 28th order for HR4829 (same star as above), which has a significant O2 band in the wavelength region.  The fit looks very accurate compared to other previous efforts (e.g., Gullikson et al. 2014, Ulmer-Moll et al. 2019).
 
 <p align="center">
   <img src="images/telluric_model_v03.png" width="850"/>

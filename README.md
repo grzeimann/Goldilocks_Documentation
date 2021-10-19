@@ -243,6 +243,10 @@ We could use the empirical method to create our average telluric model and resid
   <img src="images/telluric_pca.png" width="850"/>
 </p>
 
+<p align="center">
+  <img src="images/telluric_model.png" width="850"/>
+</p>
+
 ## Author
 Greg Zeimann
 

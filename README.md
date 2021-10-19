@@ -243,6 +243,8 @@ We could use the empirical method to create our average telluric model and resid
   <img src="images/telluric_pca.png" width="850"/>
 </p>
 
+Now that we have constructed our average telluric spectrum and our residual PCA basis we can again fit our telluric standard star library to gauge how well our hybrid model works.  Unlike the previous PCA fitting, we do not fit order by order but instead fit the whole spectrum at once.  We do ignore more challenging orders in which continuum estimation is difficult due to saturation from water vapor absorption.  We use orders=[1, 2, 3, 7, 8, 9, 10, 14, 15, 16, 17, 18, 19, 20, 24, 25, 26, 27, 28], using the convention that the orders start at 1 and not 0 like in python.  We show an example fit for HR4829, order 20, observed on 20210517.
+
 <p align="center">
   <img src="images/telluric_model.png" width="850"/>
 </p>

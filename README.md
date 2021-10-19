@@ -33,6 +33,8 @@
 
 >>[Continuum Normalization](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#continuum-normalization)
 
+>>[Principal Component Analysis](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#principal-component-analysis)
+
 >[Author](https://github.com/grzeimann/Goldilocks_Documentation/blob/master/README.md#Author)
 
 ## Working on TACC 
@@ -231,9 +233,11 @@ Continuum estimation:
   <img src="images/telluric_continuum_v02.png" width="850"/>
 </p>
 
-We accomplished this approach in two steps.  First we constructed a coarse grid of TelFit models, fit a PCA basis to the grid, fit our telluric standard star observations, determined the average telluric absorption, fit a PCA basis to the residuals of that model, then refit our standard stars.  
+### Principal Component Analysis
 
-First   We constructed a grid of TelFit models for three parameters: airmass, O2, and H2O.  This grid is rather coarse with only three points for airmass (min, median, and maximum airmass for the HET), three points for O2 (0.5e5, 2e5, and 3.5e5), and finally 8 points for H20 (ranging from 0-100% humidity).  This 72 point grid covers the phase space of expected telluric absorption at the HET.  It is far too coarse for individual modeling purposes, but more than sufficient to construct our inital PCA basis. We built a PCA model with 15 components from our 72 point grid to fit each of our 126 stars.  
+After continuum normalization, we can begin fitting telluric absorption line models. Since the HET observes at a nearly fixed airmass, the range of observed telluric absorption is smaller than other observatories.  We can use this to our advantange and subtract an average telluric absorption model and only fit the residuals with a PCA basis.  This is a more ideal useage of principal component analysis as most PCA efforts require the subtraction of a mean signal before fitting.  However, we must first determine an average telluric absorption model, and we need a set of telluric standard star residuals to construct our PCA basis.  So we start with an initial fitting effort for our telluric standard library to build the median model and construct a residual PCA basis.
+
+We could use the empirical method to create our average telluric model and residual PCA basis, but we don't want to have features in the principal components that might be related to poor continuum normalization of real stellar features.  Instead we want to create our average/residual models from theoritical telluric spectra to avoid overfitting.  So, we construct a grid of TelFit models at the HPF resolution for three parameters: airmass, O2, and H2O.  This grid is rather coarse with only three points for airmass (min, median, and maximum airmass for the HET), three points for O2 (0.5e5, 2e5, and 3.5e5), and finally 8 points for H20 (ranging from 0-100% humidity).  We don't use the grid itself for fitting, but instead we build a PCA model with 15 components from our 72 grid spectra to find the initial best fit telluric model for each of our 126 stars.  We fit order by order for this stage to construct the best initial models that we can.  After fitting each order for each star, we tabulate all of the fits and determine the average telluric absorption for all channels.  Our average is a summation of the biweight average model fits and the biweight average offset of the models from the data.  This lowers the systematics between the HPF spectra and the TelFit models.  We then construct a PCA basis from the residuals of the biweight average model and the individual model fits.  The figure below shows a small wavelength range of the average telluric model and the first 5 components of the 15 component basis.
 
 
 ## Author

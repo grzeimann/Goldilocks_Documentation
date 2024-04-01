@@ -48,7 +48,7 @@ https://portal.tacc.utexas.edu/
 
 After creating an accounting using the link above, please send Greg Zeimann <gregz@astro.as.utexas.edu> your TACC username and he will add you to the HET group.  When that step is complete, you can ssh into TACC using:
 ```
-ssh -Y USERNAME@stampede2.tacc.utexas.edu
+ssh -Y USERNAME@ls6.tacc.utexas.edu
 ```
 
 ## Data Products
@@ -58,12 +58,12 @@ ssh -Y USERNAME@stampede2.tacc.utexas.edu
 ```
 where PROGRAM-ID, is your program number, for example HET20-3-999.  To get all of the current reductions for your program, simply:
 ```
-scp -r username@stampede2.tacc.utexas.edu:/work/03946/hetdex/maverick/HPF/PROGRAM-ID .
+scp -r username@ls6.tacc.utexas.edu:/work/03946/hetdex/maverick/HPF/PROGRAM-ID .
 
 OR on the destination machine:
 
 cd PROGRAM-ID
-rsync -avz username@stampede2.tacc.utexas.edu:/work/03946/hetdex/maverick/HPF/PROGRAM-ID/ .
+rsync -avz username@ls6.tacc.utexas.edu:/work/03946/hetdex/maverick/HPF/PROGRAM-ID/ .
 ```
 You merely have to use your "username" and your "PROGRAM-ID" and you can copy over your products.  There is a small complication.  The data products in your "PROGRAM-ID" folder include the products of the HPF team as well as the new automatic pipeline.  Products released from the HPF team occur on a quarterly basis (every three months or so) and include the naming scheme:
 ```
